@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface MagazineDAO {
     public List<Magazine> findAllMagazines();
-    public List<Category> findAllCategories();
-    public List<Magazine> searchMagazinesByKeyword(String keyWord);
-    public void insert(Magazine magazine);
-    public void update(Magazine magazine);
-    public void delete(Long magazineId);
+    List<Category> findAllCategories();
+    List<Magazine> searchMagazinesByKeyword(String keyWord);
+    void insert(Magazine magazine);
+    void update(Magazine magazine);
+    void delete(Long magazineId);
 }
