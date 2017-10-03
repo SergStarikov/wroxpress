@@ -6,7 +6,7 @@ import main.beans.Magazine;
 import java.util.List;
 
 public interface MagazineDAO {
-    public List<Magazine> findAllMagazines();
+    List<Magazine> findAllMagazines();
     List<Category> findAllCategories();
     List<Magazine> searchMagazinesByKeyword(String keyWord);
     void insert(Magazine magazine);
