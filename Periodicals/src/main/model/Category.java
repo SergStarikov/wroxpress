@@ -1,4 +1,4 @@
-package main.beans;
+package main.model;
 
 public class Category {
     private Long categoryId;

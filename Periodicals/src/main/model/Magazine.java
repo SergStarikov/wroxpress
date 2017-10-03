@@ -1,7 +1,6 @@
-package main.beans;
+package main.model;
 
 
-import java.time.LocalDate;
 import java.util.Date;
 
 

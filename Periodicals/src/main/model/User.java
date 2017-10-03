@@ -1,4 +1,4 @@
-package main.beans;
+package main.model;
 
 public class User {
     private Long userId;
