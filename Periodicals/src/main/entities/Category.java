@@ -1,4 +1,4 @@
-package main.model;
+package main.entities;
 
 public class Category {
     private Long categoryId;
@@ -26,5 +26,23 @@ public class Category {
                 "categoryId=" + categoryId +
                 ", categoryDescription='" + categoryDescription + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Category category = (Category) o;
+
+        if (!categoryId.equals(category.categoryId)) return false;
+        return categoryDescription.equals(category.categoryDescription);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = categoryId.hashCode();
+        result = 31 * result + categoryDescription.hashCode();
+        return result;
     }
 }
