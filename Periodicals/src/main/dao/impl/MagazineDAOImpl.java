@@ -1,7 +1,8 @@
-package main.dao;
+package main.dao.impl;
 
-import main.model.Category;
-import main.model.Magazine;
+import main.dao.MagazineDAO;
+import main.entities.Category;
+import main.entities.Magazine;
 
 import java.sql.*;
 import java.util.ArrayList;

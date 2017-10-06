@@ -1,9 +1,9 @@
 package main.controller;
 
 import main.dao.MagazineDAO;
-import main.dao.MagazineDAOImpl;
-import main.model.Category;
-import main.model.Magazine;
+import main.dao.impl.MagazineDAOImpl;
+import main.entities.Category;
+import main.entities.Magazine;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -70,7 +70,7 @@ public class MagazineController extends HttpServlet{
             request.setAttribute("magazinesList", magazinesList);
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 
@@ -84,7 +84,7 @@ public class MagazineController extends HttpServlet{
             request.setAttribute("magazinesList", magazineList);
 
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 }

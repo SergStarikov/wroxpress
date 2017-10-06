@@ -1,7 +1,7 @@
 package main.dao;
 
-import main.model.Category;
-import main.model.Magazine;
+import main.entities.Category;
+import main.entities.Magazine;
 
 import java.util.List;
 
