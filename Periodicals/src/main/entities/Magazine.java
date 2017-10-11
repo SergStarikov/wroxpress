@@ -1,17 +1,20 @@
 package main.entities;
 
 
-import java.util.Date;
-
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class Magazine {
     private Long magazineId;
     private String title;
-    private Date publishYear;
+    private LocalDate publishYear;
+    private BigDecimal price;
     private String language;
     private String country;
     private String index;
     private String type;
+    private String pictureURL;
+    private Category category;
 
     public Long getMagazineId() {
         return magazineId;
@@ -29,11 +32,11 @@ public class Magazine {
         this.title = title;
     }
 
-    public Date getPublishYear() {
+    public LocalDate getPublishYear() {
         return publishYear;
     }
 
-    public void setPublishYear(Date publishYear) {
+    public void setPublishYear(LocalDate publishYear) {
         this.publishYear = publishYear;
     }
 
@@ -69,16 +72,56 @@ public class Magazine {
         this.type = type;
     }
 
-    @Override
-    public String toString() {
-        return "Magazine{" +
-                "magazineId=" + magazineId +
-                ", title='" + title + '\'' +
-                ", publishYear=" + publishYear +
-                ", language='" + language + '\'' +
-                ", country='" + country + '\'' +
-                ", index='" + index + '\'' +
-                ", type='" + type + '\'' +
-                '}';
+    public BigDecimal getPrice() {
+        return price;
     }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public String getPictureURL() {
+        return pictureURL;
+    }
+
+    public void setPictureURL(String pictureURL) {
+        this.pictureURL = pictureURL;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Magazine magazine = (Magazine) o;
+
+        if (!magazineId.equals(magazine.magazineId)) return false;
+        if (!title.equals(magazine.title)) return false;
+        if (!publishYear.equals(magazine.publishYear)) return false;
+        if (!price.equals(magazine.price)) return false;
+        if (!language.equals(magazine.language)) return false;
+        if (!country.equals(magazine.country)) return false;
+        if (!index.equals(magazine.index)) return false;
+        if (!type.equals(magazine.type)) return false;
+        if (!pictureURL.equals(magazine.pictureURL)) return false;
+        return category.equals(magazine.category);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = title.hashCode();
+        result = 31 * result + price.hashCode();
+        result = 31 * result + index.hashCode();
+        return result;
+    }
+
+
 }

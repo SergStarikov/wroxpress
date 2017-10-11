@@ -17,6 +17,11 @@ public class MagazineDAOImpl implements MagazineDAO {
         }
     }
 
+    @Override
+    public Magazine findById(Long id) {
+        return null;
+    }
+
     private Connection getConnection() throws SQLException{
         return DriverManager.getConnection("jdbc:mysql://localhost:3306/periodics","root", "23031987");
     }
@@ -31,7 +36,7 @@ public class MagazineDAOImpl implements MagazineDAO {
     }
 
     @Override
-    public List<Magazine> findAllMagazines() {
+    public List<Magazine> findAll() {
         List<Magazine> result = new ArrayList<>();
 
         String sql = "select * from periodics";
@@ -44,7 +49,7 @@ public class MagazineDAOImpl implements MagazineDAO {
             while (resultSet.next()){
                 Magazine magazine = new Magazine();
                 magazine.setMagazineId(resultSet.getLong("magazine_Id"));
-                magazine.setPublishYear(resultSet.getDate("publish_Year"));
+                magazine.setPublishYear(resultSet.getDate("publish_Year").toLocalDate());
                 magazine.setTitle(resultSet.getString("title"));
                 magazine.setCountry(resultSet.getString("country"));
                 magazine.setLanguage(resultSet.getString("language"));
@@ -98,7 +103,7 @@ public class MagazineDAOImpl implements MagazineDAO {
             while (resultSet.next()){
                 Magazine magazine = new Magazine();
                 magazine.setMagazineId(resultSet.getLong("magazine_Id"));
-                magazine.setPublishYear(resultSet.getDate("publish_Year"));
+                magazine.setPublishYear(resultSet.getDate("publish_Year").toLocalDate());
                 magazine.setTitle(resultSet.getString("title"));
                 magazine.setCountry(resultSet.getString("country"));
                 magazine.setLanguage(resultSet.getString("language"));
@@ -116,17 +121,17 @@ public class MagazineDAOImpl implements MagazineDAO {
     }
 
     @Override
-    public void insert(Magazine magazine) {
-
+    public Magazine create(Magazine item) {
+        return null;
     }
 
     @Override
-    public void update(Magazine magazine) {
-
+    public Magazine update(Magazine item) {
+        return null;
     }
 
     @Override
-    public void delete(Long magazineId) {
-
+    public Magazine delete(Magazine item) {
+        return null;
     }
 }

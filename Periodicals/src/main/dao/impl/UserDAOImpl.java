@@ -11,26 +11,32 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAOImpl implements UserDAO {
+public class UserDAOImpl implements UserDAO, AutoCloseable {
+
+    @Override
+    public User findByLoginPassword(String login, String password) {
+        return null;
+    }
+
     private Connection connection;
     @Override
-    public User findById() {
+    public User findById(Long id) {
         return null;
     }
 
     @Override
-    public void create() {
-
+    public User create(User item) {
+        return null;
     }
 
     @Override
-    public void update() {
-
+    public User update(User item) {
+        return null;
     }
 
     @Override
-    public void delete() {
-
+    public User delete(User item) {
+        return  null;
     }
 
     @Override
@@ -48,5 +54,8 @@ public class UserDAOImpl implements UserDAO {
         return result;
     }
 
+    @Override
+    public void close() throws Exception {
 
+    }
 }

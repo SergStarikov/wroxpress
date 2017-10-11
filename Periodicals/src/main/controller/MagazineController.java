@@ -66,7 +66,7 @@ public class MagazineController extends HttpServlet{
                               HttpServletResponse response) throws ServletException, IOException {
         try {
             MagazineDAO magazineDAO = new MagazineDAOImpl();
-            List<Magazine> magazinesList = magazineDAO.findAllMagazines();
+            List<Magazine> magazinesList = magazineDAO.findAll();
             request.setAttribute("magazinesList", magazinesList);
 
         } catch (Exception e) {

@@ -8,6 +8,7 @@ public class UserBuilder {
     private String lastName = "second_name";
     private String phoneNumber = "0123456789";
     private String email = "some@gmail.com";
+    private String role = "user";
 
     public UserBuilder buildUserId(Long userId){
         this.userId = userId;
@@ -19,7 +20,7 @@ public class UserBuilder {
         return this;
     }
 
-    public UserBuilder buildLastName(String LastName){
+    public UserBuilder buildLastName(String lastName){
         this.lastName = lastName;
         return this;
     }
@@ -34,6 +35,11 @@ public class UserBuilder {
         return this;
     }
 
+    public UserBuilder buildRole(String role){
+        this.role = role;
+        return this;
+    }
+
     public User build(){
         User user = new User();
         user.setUserId(userId);
@@ -41,6 +47,7 @@ public class UserBuilder {
         user.setLastName(lastName);
         user.setPhoneNumber(phoneNumber);
         user.setEmail(email);
+        user.setRole(role);
         return user;
     }
 }
